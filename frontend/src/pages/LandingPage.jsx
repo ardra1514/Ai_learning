@@ -73,12 +73,7 @@ const LandingPage = () => {
                 Home
               </Link>
 
-              <Link
-                to="/courses"
-                className="text-sm text-[#B8D0D4] transition hover:text-white"
-              >
-                Courses
-              </Link>
+             
 
               <Link
                 to="/features"
