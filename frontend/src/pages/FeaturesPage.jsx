@@ -6,27 +6,40 @@ const FeaturesPage = () => {
   return (
     <>
       <Helmet>
-        <title>
-          AI Study Platform Features | PDF Notes, Quizzes & Flashcards
-        </title>
+  <title>
+    AI Study Platform Features | PDF Notes, Quizzes & Flashcards | Learnly AI
+  </title>
 
-        <meta
-          name="description"
-          content="Explore AI-powered study features including PDF analysis, short notes, quizzes, flashcards, and AI learning assistance."
-        />
+  <meta
+    name="description"
+    content="Explore Learnly AI features including PDF analysis, AI-generated short notes, quizzes, flashcards, and personalized AI learning assistance."
+  />
 
-        <meta
-          property="og:title"
-          content="AI Study Platform Features"
-        />
+  <link
+    rel="canonical"
+    href="https://learnly-ai-six.vercel.app/features"
+  />
 
-        <meta
-          property="og:description"
-          content="Turn your study PDFs into short notes, quizzes, and flashcards with AI-powered learning tools."
-        />
+  <meta
+    property="og:title"
+    content="AI Study Platform Features | Learnly AI"
+  />
 
-        <meta property="og:type" content="website" />
-      </Helmet>
+  <meta
+    property="og:description"
+    content="Turn your study PDFs into short notes, quizzes, and flashcards with Learnly AI."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:url"
+    content="https://learnly-ai-six.vercel.app/features"
+  />
+</Helmet>
 
       <main>
 

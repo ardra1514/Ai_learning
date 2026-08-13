@@ -6,25 +6,40 @@ const CoursesPage = () => {
   return (
     <>
       <Helmet>
-        <title>AI Courses | Learn Artificial Intelligence & Machine Learning</title>
+  <title>
+    AI Courses | Learn Artificial Intelligence & Machine Learning | Learnly AI
+  </title>
 
-        <meta
-          name="description"
-          content="Explore AI, machine learning, Python, and programming courses designed to help beginners build practical technology skills."
-        />
+  <meta
+    name="description"
+    content="Explore AI, machine learning, Python, and programming courses on Learnly AI. Build practical technology skills and learn with AI-powered study tools."
+  />
 
-        <meta
-          property="og:title"
-          content="AI Courses | Learn Artificial Intelligence & Machine Learning"
-        />
+  <link
+    rel="canonical"
+    href="https://learnly-ai-six.vercel.app/courses"
+  />
 
-        <meta
-          property="og:description"
-          content="Explore AI, machine learning, Python, and programming courses designed to help beginners build practical technology skills."
-        />
+  <meta
+    property="og:title"
+    content="AI Courses | Learn AI & Machine Learning | Learnly AI"
+  />
 
-        <meta property="og:type" content="website" />
-      </Helmet>
+  <meta
+    property="og:description"
+    content="Explore AI, machine learning, Python, and programming courses with Learnly AI."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:url"
+    content="https://learnly-ai-six.vercel.app/courses"
+  />
+</Helmet>
 
       <main>
 

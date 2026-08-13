@@ -5,41 +5,53 @@ import { Helmet } from "react-helmet-async";
 const LandingPage = () => {
   return (
     <>
-    <Helmet>
-
+  <Helmet>
   <title>
-    AI Study Platform | Turn PDFs into Notes, Quizzes & Flashcards
+    Learnly AI | Turn PDFs into Notes, Quizzes & Flashcards
   </title>
 
   <meta
     name="description"
-    content="Upload your study PDFs and use AI to create short notes, quizzes, and flashcards. Study smarter and prepare faster with an AI-powered learning platform."
+    content="Learnly AI helps students turn study PDFs into short notes, quizzes, and flashcards using AI. Upload your study material and study smarter."
   />
 
+  <link
+    rel="canonical"
+    href="https://learnly-ai-six.vercel.app/"
+  />
+
+  {/* Open Graph */}
   <meta
     property="og:title"
-    content="AI Study Platform | PDFs to Notes, Quizzes & Flashcards"
+    content="Learnly AI | AI-Powered Study Platform"
   />
 
   <meta
     property="og:description"
-    content="Upload study PDFs and let AI create short notes, quizzes, and flashcards to help you study smarter."
+    content="Turn study PDFs into short notes, quizzes, and flashcards with Learnly AI."
   />
 
-  <meta property="og:type" content="website" />
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:url"
+    content="https://learnly-ai-six.vercel.app/"
+  />
 
   {/* Structured Data */}
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "AI Learning Platform",
+      name: "Learnly AI",
       description:
-        "An AI-powered learning platform that converts study PDFs into short notes, quizzes, and flashcards.",
-      url: "",
+        "AI-powered study platform that turns study PDFs into short notes, quizzes, and flashcards.",
+      url: "https://learnly-ai-six.vercel.app/",
     })}
   </script>
-
 </Helmet>
 
       <main>

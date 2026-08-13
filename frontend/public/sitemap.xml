@@ -3,19 +3,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://YOUR-DOMAIN.com/</loc>
+    <loc>https://learnly-ai-six.vercel.app/</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-DOMAIN.com/courses</loc>
+    <loc>https://learnly-ai-six.vercel.app/courses</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-DOMAIN.com/features</loc>
-  </url>
-
-  <url>
-    <loc>https://YOUR-DOMAIN.com/about</loc>
+    <loc>https://learnly-ai-six.vercel.app/features</loc>
   </url>
 
 </urlset>
