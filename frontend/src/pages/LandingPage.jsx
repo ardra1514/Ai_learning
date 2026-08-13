@@ -5,293 +5,470 @@ import { Helmet } from "react-helmet-async";
 const LandingPage = () => {
   return (
     <>
-  <Helmet>
-  <title>
-    Learnly AI | Turn PDFs into Notes, Quizzes & Flashcards
-  </title>
+      <Helmet>
+        <title>
+          Learnly AI | Turn PDFs into Notes, Quizzes & Flashcards
+        </title>
 
-  <meta
-    name="description"
-    content="Learnly AI helps students turn study PDFs into short notes, quizzes, and flashcards using AI. Upload your study material and study smarter."
-  />
+        <meta
+          name="description"
+          content="Learnly AI helps students turn study PDFs into short notes, quizzes, and flashcards using AI. Upload your study material and study smarter."
+        />
 
-  <link
-    rel="canonical"
-    href="https://learnly-ai-six.vercel.app/"
-  />
+        <link
+          rel="canonical"
+          href="https://learnly-ai-six.vercel.app/"
+        />
 
-  {/* Open Graph */}
-  <meta
-    property="og:title"
-    content="Learnly AI | AI-Powered Study Platform"
-  />
+        <meta
+          property="og:title"
+          content="Learnly AI | AI-Powered Study Platform"
+        />
 
-  <meta
-    property="og:description"
-    content="Turn study PDFs into short notes, quizzes, and flashcards with Learnly AI."
-  />
+        <meta
+          property="og:description"
+          content="Turn study PDFs into short notes, quizzes, and flashcards with Learnly AI."
+        />
 
-  <meta
-    property="og:type"
-    content="website"
-  />
+        <meta property="og:type" content="website" />
 
-  <meta
-    property="og:url"
-    content="https://learnly-ai-six.vercel.app/"
-  />
+        <meta
+          property="og:url"
+          content="https://learnly-ai-six.vercel.app/"
+        />
 
-  {/* Structured Data */}
-  <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Learnly AI",
-      description:
-        "AI-powered study platform that turns study PDFs into short notes, quizzes, and flashcards.",
-      url: "https://learnly-ai-six.vercel.app/",
-    })}
-  </script>
-</Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Learnly AI",
+            description:
+              "AI-powered study platform that turns study PDFs into short notes, quizzes, and flashcards.",
+            url: "https://learnly-ai-six.vercel.app/",
+          })}
+        </script>
+      </Helmet>
 
-      <main>
+      <main className="min-h-screen bg-[#05161A] text-white">
+
+        {/* ================= NAVBAR ================= */}
+        <nav className="sticky top-0 z-50 border-b border-[#294D61]/40 bg-[#05161A]/90 backdrop-blur-xl">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+            <Link to="/" className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F969C] text-xl font-bold shadow-lg shadow-[#0F969C]/20">
+                L
+              </div>
+
+              <span className="text-xl font-bold tracking-tight">
+                Learnly <span className="text-[#6DA5C0]">AI</span>
+              </span>
+            </Link>
+
+            <div className="hidden items-center gap-8 md:flex">
+              <Link
+                to="/"
+                className="text-sm text-[#B8D0D4] transition hover:text-white"
+              >
+                Home
+              </Link>
+
+              <Link
+                to="/courses"
+                className="text-sm text-[#B8D0D4] transition hover:text-white"
+              >
+                Courses
+              </Link>
+
+              <Link
+                to="/features"
+                className="text-sm text-[#B8D0D4] transition hover:text-white"
+              >
+                Features
+              </Link>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <Link
+                to="/login"
+                className="hidden rounded-lg px-4 py-2 text-sm text-[#B8D0D4] transition hover:bg-[#072E33] hover:text-white sm:block"
+              >
+                Login
+              </Link>
+
+              <Link
+                to="/register"
+                className="rounded-lg bg-[#0F969C] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#0F969C]/20 transition hover:bg-[#0C7075]"
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+        </nav>
 
         {/* ================= HERO ================= */}
-        <section>
-          <h1>
-            Turn Your Study PDFs Into Smart Learning Materials
-          </h1>
+        <section className="relative overflow-hidden">
 
-          <p>
-            Upload your study PDFs and let AI create short notes,
-            flashcards, and quizzes to help you understand your
-            study material and prepare faster.
-          </p>
+          {/* Background glow */}
+          <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#0C7075]/20 blur-3xl" />
+          <div className="pointer-events-none absolute -right-40 top-40 h-96 w-96 rounded-full bg-[#294D61]/30 blur-3xl" />
 
-          <div>
-            <Link
-              to="/register"
-              className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg"
-            >
-              Start Learning
-            </Link>
+          <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-2 lg:py-32">
 
-            <Link
-              to="/courses"
-              className="inline-block mt-4 ml-4 px-6 py-3 border border-blue-600 text-blue-600 rounded-lg"
-            >
-              Explore Courses
-            </Link>
+            {/* Hero content */}
+            <div>
+
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#0F969C]/40 bg-[#072E33] px-4 py-2 text-sm text-[#6DA5C0]">
+                <span className="h-2 w-2 rounded-full bg-[#0F969C]" />
+                AI-Powered Learning Platform
+              </div>
+
+              <h1 className="max-w-3xl text-5xl font-extrabold leading-tight tracking-tight md:text-6xl">
+                Turn Your PDFs Into{" "}
+                <span className="text-[#0F969C]">
+                  Smart Learning
+                </span>{" "}
+                Materials
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-[#B8D0D4]">
+                Upload your study PDFs and let AI create short notes,
+                quizzes, and flashcards to help you understand your
+                study material and prepare faster.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+
+                <Link
+                  to="/register"
+                  className="rounded-xl bg-[#0F969C] px-7 py-3.5 font-semibold text-white shadow-xl shadow-[#0F969C]/20 transition duration-300 hover:-translate-y-1 hover:bg-[#0C7075]"
+                >
+                  Start Learning →
+                </Link>
+
+                <Link
+                  to="/courses"
+                  className="rounded-xl border border-[#294D61] bg-[#072E33]/60 px-7 py-3.5 font-semibold text-[#B8D0D4] transition duration-300 hover:-translate-y-1 hover:border-[#0F969C] hover:text-white"
+                >
+                  Explore Courses
+                </Link>
+
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-6 text-sm text-[#6DA5C0]">
+                <span>✓ AI-powered</span>
+                <span>✓ PDF learning</span>
+                <span>✓ Smart revision</span>
+              </div>
+            </div>
+
+            {/* Hero visual */}
+            <div className="relative">
+
+              <div className="absolute -inset-5 rounded-3xl bg-[#0F969C]/10 blur-2xl" />
+
+              <div className="relative rounded-3xl border border-[#294D61] bg-[#072E33] p-6 shadow-2xl">
+
+                <div className="mb-6 flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-[#6DA5C0]">
+                      AI Study Workspace
+                    </p>
+
+                    <h3 className="mt-1 text-xl font-bold">
+                      Your Study Material
+                    </h3>
+                  </div>
+
+                  <div className="rounded-xl bg-[#0F969C]/20 px-3 py-2 text-xl">
+                    🤖
+                  </div>
+                </div>
+
+                {/* PDF */}
+                <div className="rounded-2xl border border-[#294D61] bg-[#05161A] p-5">
+
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#0C7075] text-2xl">
+                      📄
+                    </div>
+
+                    <div>
+                      <p className="font-semibold">
+                        Machine Learning.pdf
+                      </p>
+                      <p className="text-sm text-[#6DA5C0]">
+                        AI is analyzing your document...
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 h-2 overflow-hidden rounded-full bg-[#294D61]">
+                    <div className="h-full w-4/5 rounded-full bg-[#0F969C]" />
+                  </div>
+                </div>
+
+                {/* Generated content */}
+                <div className="mt-5 grid grid-cols-3 gap-3">
+
+                  <div className="rounded-xl border border-[#294D61] bg-[#05161A] p-4 text-center">
+                    <div className="text-2xl">📝</div>
+                    <p className="mt-2 text-xs font-semibold">
+                      Short Notes
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-[#294D61] bg-[#05161A] p-4 text-center">
+                    <div className="text-2xl">❓</div>
+                    <p className="mt-2 text-xs font-semibold">
+                      Quiz
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-[#294D61] bg-[#05161A] p-4 text-center">
+                    <div className="text-2xl">🧠</div>
+                    <p className="mt-2 text-xs font-semibold">
+                      Flashcards
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
+        {/* ================= FEATURES ================= */}
+        <section className="border-t border-[#294D61]/40 bg-[#072E33]/40 px-6 py-24">
 
-        {/* ================= ABOUT PLATFORM ================= */}
-        <section>
-          <h2>
-            Learn Smarter With AI
-          </h2>
+          <div className="mx-auto max-w-7xl">
 
-          <p>
-            Our AI-powered learning platform helps students turn
-            lengthy study materials into simple and useful learning
-            resources. Upload a PDF and use AI to generate short notes,
-            quizzes, and flashcards for easier learning and revision.
-          </p>
+            <div className="mx-auto max-w-2xl text-center">
+
+              <p className="text-sm font-semibold uppercase tracking-widest text-[#6DA5C0]">
+                Everything You Need
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+                Study Smarter With AI
+              </h2>
+
+              <p className="mt-4 text-[#B8D0D4]">
+                Transform your study materials into useful
+                learning resources with a few clicks.
+              </p>
+
+            </div>
+
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+              {[
+                {
+                  icon: "📄",
+                  title: "PDF Analysis",
+                  text: "Upload your study PDFs and let AI understand your learning material.",
+                },
+                {
+                  icon: "📝",
+                  title: "AI Short Notes",
+                  text: "Convert lengthy documents into concise notes for faster revision.",
+                },
+                {
+                  icon: "❓",
+                  title: "AI Quizzes",
+                  text: "Generate questions from your study material and test your knowledge.",
+                },
+                {
+                  icon: "🧠",
+                  title: "Smart Flashcards",
+                  text: "Create flashcards automatically for quick and effective revision.",
+                },
+                {
+                  icon: "🤖",
+                  title: "AI Study Assistant",
+                  text: "Get AI-powered help when you need to understand difficult concepts.",
+                },
+                {
+                  icon: "📊",
+                  title: "Learning Dashboard",
+                  text: "Manage your documents, quizzes, flashcards and learning progress.",
+                },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="group rounded-2xl border border-[#294D61] bg-[#05161A] p-7 transition duration-300 hover:-translate-y-2 hover:border-[#0F969C] hover:shadow-xl hover:shadow-[#0F969C]/10"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0C7075]/30 text-2xl">
+                    {feature.icon}
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-bold">
+                    {feature.title}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-[#B8D0D4]">
+                    {feature.text}
+                  </p>
+                </div>
+              ))}
+
+            </div>
+          </div>
         </section>
-
-
-        {/* ================= PDF UPLOAD ================= */}
-        <section>
-          <h2>
-            Upload Your Study PDF
-          </h2>
-
-          <p>
-            Upload your study material as a PDF and let our AI
-            analyze the content to make learning easier and more
-            organized.
-          </p>
-        </section>
-
-
-        {/* ================= SHORT NOTES ================= */}
-        <section>
-          <h2>
-            Generate Short Notes with AI
-          </h2>
-
-          <p>
-            Turn lengthy study materials into concise short notes
-            that make revision faster and easier. Focus on the
-            important concepts without reading the entire document
-            repeatedly.
-          </p>
-        </section>
-
-
-        {/* ================= QUIZZES ================= */}
-        <section>
-          <h2>
-            Create Quizzes from Your Study Material
-          </h2>
-
-          <p>
-            Generate quizzes from your uploaded PDFs and test
-            how well you understand the study material. Practice
-            questions can help you identify topics that need more
-            attention.
-          </p>
-        </section>
-
-
-        {/* ================= FLASHCARDS ================= */}
-        <section>
-          <h2>
-            Generate Flashcards for Revision
-          </h2>
-
-          <p>
-            Create flashcards from your study materials and use
-            them to quickly review important concepts, definitions,
-            and key points.
-          </p>
-        </section>
-
-
-        {/* ================= AI ASSISTANT ================= */}
-        <section>
-          <h2>
-            AI-Powered Study Assistant
-          </h2>
-
-          <p>
-            Use AI to understand difficult topics, review your
-            study material, and get assistance while learning.
-          </p>
-        </section>
-
 
         {/* ================= HOW IT WORKS ================= */}
-        <section>
-          <h2>
-            How Our AI Study Platform Works
-          </h2>
+        <section className="px-6 py-24">
 
-          <ol>
-            <li>
-              <strong>Upload your PDF</strong>
-              <p>
-                Add your study material to the platform.
-              </p>
-            </li>
+          <div className="mx-auto max-w-7xl">
 
-            <li>
-              <strong>Let AI analyze it</strong>
-              <p>
-                Our AI processes the content of your document.
-              </p>
-            </li>
+            <div className="text-center">
 
-            <li>
-              <strong>Generate learning materials</strong>
-              <p>
-                Get short notes, quizzes, and flashcards
-                based on your study material.
+              <p className="text-sm font-semibold uppercase tracking-widest text-[#6DA5C0]">
+                Simple Process
               </p>
-            </li>
 
-            <li>
-              <strong>Study and test yourself</strong>
-              <p>
-                Use the generated materials to revise and
-                test your knowledge.
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+                How Learnly AI Works
+              </h2>
+
+              <p className="mx-auto mt-4 max-w-2xl text-[#B8D0D4]">
+                Turn your study material into useful learning
+                resources in just a few simple steps.
               </p>
-            </li>
-          </ol>
+
+            </div>
+
+            <div className="mt-14 grid gap-8 md:grid-cols-3">
+
+              {[
+                {
+                  number: "01",
+                  icon: "📄",
+                  title: "Upload Your PDF",
+                  text: "Add your notes, textbook, study material or document.",
+                },
+                {
+                  number: "02",
+                  icon: "🤖",
+                  title: "Let AI Analyze",
+                  text: "Learnly AI processes your document and understands its content.",
+                },
+                {
+                  number: "03",
+                  icon: "🧠",
+                  title: "Study & Practice",
+                  text: "Get notes, quizzes and flashcards to learn and revise.",
+                },
+              ].map((step) => (
+                <div
+                  key={step.number}
+                  className="relative rounded-2xl border border-[#294D61] bg-[#072E33] p-8"
+                >
+                  <span className="text-sm font-bold text-[#0F969C]">
+                    {step.number}
+                  </span>
+
+                  <div className="mt-5 text-4xl">
+                    {step.icon}
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-bold">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-[#B8D0D4]">
+                    {step.text}
+                  </p>
+                </div>
+              ))}
+
+            </div>
+          </div>
         </section>
-
-
-        {/* ================= WHY USE US ================= */}
-        <section>
-          <h2>
-            Why Use Our AI Study Platform?
-          </h2>
-
-          <ul>
-            <li>
-              Convert lengthy PDFs into easy-to-read short notes
-            </li>
-
-            <li>
-              Generate quizzes from your study material
-            </li>
-
-            <li>
-              Create flashcards for quick revision
-            </li>
-
-            <li>
-              Use AI to understand difficult topics
-            </li>
-
-            <li>
-              Organize your learning materials
-            </li>
-
-            <li>
-              Study and revise at your own pace
-            </li>
-          </ul>
-        </section>
-
-
-        {/* ================= COURSES ================= */}
-        <section>
-          <h2>
-            Explore Learning Resources
-          </h2>
-
-          <p>
-            Explore our learning resources and improve your
-            understanding of important academic and technical
-            concepts.
-          </p>
-
-          <Link
-            to="/courses"
-            className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg"
-          >
-            Explore Courses
-          </Link>
-        </section>
-
 
         {/* ================= CTA ================= */}
-        <section>
-          <h2>
-            Start Studying Smarter Today
-          </h2>
+        <section className="px-6 pb-24">
 
-          <p>
-            Upload your study materials, generate AI-powered
-            learning resources, and make your study sessions
-            more effective.
-          </p>
+          <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-[#0C7075] bg-[#072E33] px-6 py-16 text-center shadow-2xl shadow-[#0F969C]/10 md:px-12">
 
-          <Link
-            to="/register"
-            className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg"
-          >
-            Create Free Account
-          </Link>
-          <Link
-  to="/features"
-  className="inline-block mt-4 px-6 py-3 border border-blue-600 text-blue-600 rounded-lg"
->
-  View Features
-</Link>
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0F969C] text-3xl">
+              🚀
+            </div>
+
+            <h2 className="mt-7 text-3xl font-bold md:text-4xl">
+              Start Studying Smarter Today
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#B8D0D4]">
+              Upload your study materials, generate AI-powered
+              learning resources and make every study session
+              more effective.
+            </p>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+
+              <Link
+                to="/register"
+                className="rounded-xl bg-[#0F969C] px-7 py-3.5 font-semibold transition hover:bg-[#0C7075]"
+              >
+                Create Free Account →
+              </Link>
+
+              <Link
+                to="/features"
+                className="rounded-xl border border-[#294D61] px-7 py-3.5 font-semibold text-[#B8D0D4] transition hover:border-[#6DA5C0] hover:text-white"
+              >
+                View Features
+              </Link>
+
+            </div>
+          </div>
         </section>
+
+        {/* ================= FOOTER ================= */}
+        <footer className="border-t border-[#294D61]/40 bg-[#05161A] px-6 py-10">
+
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 md:flex-row">
+
+            <div>
+              <p className="text-lg font-bold">
+                Learnly <span className="text-[#6DA5C0]">AI</span>
+              </p>
+
+              <p className="mt-1 text-sm text-[#6DA5C0]">
+                Learn smarter. Study faster.
+              </p>
+            </div>
+
+            <div className="flex gap-6 text-sm text-[#B8D0D4]">
+              <Link
+                to="/courses"
+                className="hover:text-white"
+              >
+                Courses
+              </Link>
+
+              <Link
+                to="/features"
+                className="hover:text-white"
+              >
+                Features
+              </Link>
+
+              <Link
+                to="/login"
+                className="hover:text-white"
+              >
+                Login
+              </Link>
+            </div>
+
+            <p className="text-sm text-[#6DA5C0]">
+              © {new Date().getFullYear()} Learnly AI
+            </p>
+
+          </div>
+        </footer>
 
       </main>
     </>
