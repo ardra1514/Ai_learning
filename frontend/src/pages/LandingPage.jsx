@@ -141,12 +141,7 @@ const LandingPage = () => {
                   Start Learning →
                 </Link>
 
-                <Link
-                  to="/courses"
-                  className="rounded-xl border border-[#294D61] bg-[#072E33]/60 px-7 py-3.5 font-semibold text-[#B8D0D4] transition duration-300 hover:-translate-y-1 hover:border-[#0F969C] hover:text-white"
-                >
-                  Explore Courses
-                </Link>
+              
 
               </div>
 
@@ -436,12 +431,7 @@ const LandingPage = () => {
             </div>
 
             <div className="flex gap-6 text-sm text-[#B8D0D4]">
-              <Link
-                to="/courses"
-                className="hover:text-white"
-              >
-                Courses
-              </Link>
+            
 
               <Link
                 to="/features"

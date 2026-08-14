@@ -1,90 +1,161 @@
-import React, { useContext } from "react";
+import React, { useContext, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Login from "./pages/Auth/Login";
-import Register from "./pages/Auth/Register";
-import LandingPage from "./pages/LandingPage";
-
-import Dashboard from "./pages/dashboard/Dashboard";
-import DocumentListPage from "./pages/Documents/DocumentListPage";
-import DocumentDetailPage from "./pages/Documents/DocumentDetailPage";
-import FlashcardListPage from "./pages/falshcard/FlashcardListPage";
-import FlashCardPage from "./pages/falshcard/FlashCardPage";
-import QuizTakePage from "./pages/Quizzes/QuizTakePage";
-import QuizResultPage from "./pages/Quizzes/QuizResultPage";
-import ProfilePage from "./pages/profile/ProfilePage";
-
-import ProtectedRoute from "./components/auth/ProtectedRoute";
 import { AuthContext } from "./context/AuthContext";
-import CoursesPage from "./pages/CoursesPage";
-import FeaturesPage from "./pages/FeaturesPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+
+// ================= PUBLIC PAGES =================
+
+const LandingPage = lazy(() => import("./pages/LandingPage"));
+const FeaturesPage = lazy(() => import("./pages/FeaturesPage"));
+const Login = lazy(() => import("./pages/Auth/Login"));
+const Register = lazy(() => import("./pages/Auth/Register"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+
+// ================= PROTECTED PAGES =================
+
+const Dashboard = lazy(() =>
+  import("./pages/dashboard/Dashboard")
+);
+
+const DocumentListPage = lazy(() =>
+  import("./pages/Documents/DocumentListPage")
+);
+
+const DocumentDetailPage = lazy(() =>
+  import("./pages/Documents/DocumentDetailPage")
+);
+
+const FlashcardListPage = lazy(() =>
+  import("./pages/falshcard/FlashcardListPage")
+);
+
+const FlashCardPage = lazy(() =>
+  import("./pages/falshcard/FlashCardPage")
+);
+
+const QuizTakePage = lazy(() =>
+  import("./pages/Quizzes/QuizTakePage")
+);
+
+const QuizResultPage = lazy(() =>
+  import("./pages/Quizzes/QuizResultPage")
+);
+
+const ProfilePage = lazy(() =>
+  import("./pages/profile/ProfilePage")
+);
+
+// ================= LOADING COMPONENT =================
+
+const PageLoader = () => {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-[#05161A] text-white">
+      <div className="text-center">
+
+        <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-4 border-[#294D61] border-t-[#0F969C]" />
+
+        <p className="text-[#B8D0D4]">
+          Loading...
+        </p>
+
+      </div>
+    </div>
+  );
+};
+
+// ================= APP =================
 
 const App = () => {
   const { loading } = useContext(AuthContext);
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <p>Loading...</p>
-      </div>
-    );
+    return <PageLoader />;
   }
 
   return (
-    <Routes>
+    <Suspense fallback={<PageLoader />}>
 
-      {/* PUBLIC LANDING PAGE */}
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/courses" element={<CoursesPage />} />
-      <Route path="/features" element={<FeaturesPage />} />
+      <Routes>
 
-      {/* PUBLIC AUTH PAGES */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-
-      {/* PROTECTED PAGES */}
-      <Route element={<ProtectedRoute />}>
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* ================= PUBLIC ================= */}
 
         <Route
-          path="/documents"
-          element={<DocumentListPage />}
+          path="/"
+          element={<LandingPage />}
         />
 
         <Route
-          path="/documents/:id"
-          element={<DocumentDetailPage />}
+          path="/features"
+          element={<FeaturesPage />}
         />
 
         <Route
-          path="/flashcards"
-          element={<FlashcardListPage />}
+          path="/login"
+          element={<Login />}
         />
 
         <Route
-          path="/documents/:id/flashcards"
-          element={<FlashCardPage />}
+          path="/register"
+          element={<Register />}
         />
+
+        {/* ================= PROTECTED ================= */}
+
+        <Route element={<ProtectedRoute />}>
+
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+
+          <Route
+            path="/documents"
+            element={<DocumentListPage />}
+          />
+
+          <Route
+            path="/documents/:id"
+            element={<DocumentDetailPage />}
+          />
+
+          <Route
+            path="/flashcards"
+            element={<FlashcardListPage />}
+          />
+
+          <Route
+            path="/documents/:id/flashcards"
+            element={<FlashCardPage />}
+          />
+
+          <Route
+            path="/quizzes/:quizId"
+            element={<QuizTakePage />}
+          />
+
+          <Route
+            path="/quizzes/:quizId/results"
+            element={<QuizResultPage />}
+          />
+
+          <Route
+            path="/profile"
+            element={<ProfilePage />}
+          />
+
+        </Route>
+
+        {/* ================= 404 ================= */}
 
         <Route
-          path="/quizzes/:quizId"
-          element={<QuizTakePage />}
+          path="*"
+          element={<NotFoundPage />}
         />
 
-        <Route
-          path="/quizzes/:quizId/results"
-          element={<QuizResultPage />}
-        />
+      </Routes>
 
-        <Route
-          path="/profile"
-          element={<ProfilePage />}
-        />
-      </Route>
-      <Route path="*" element={<NotFoundPage />} />
-
-    </Routes>
+    </Suspense>
   );
 };
 

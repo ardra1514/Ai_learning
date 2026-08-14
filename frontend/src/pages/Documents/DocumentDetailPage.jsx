@@ -1,4 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  lazy,
+  Suspense,
+} from "react";
 import { useParams, Link } from "react-router-dom";
 
 import Spinner from "../../components/common/Spinner";
@@ -7,11 +12,27 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import documentService from "../../services/documentServices";
 import Tabs from "../../components/common/Tabs";
 import PageHeader from "../../components/common/PageHeader";
-import ChatInterface from "../../components/chat/ChatInterface";
-import AIActions from "../../components/ai/AIActions";
-import FlashcardManager from "../../components/flashcards/FlashcardManager";
-import QuizManager from "../../components/quiz/QuizManager";
+const ChatInterface = lazy(
+  () => import("../../components/chat/ChatInterface")
+);
 
+const AIActions = lazy(
+  () => import("../../components/ai/AIActions")
+);
+
+const FlashcardManager = lazy(
+  () => import("../../components/flashcards/FlashcardManager")
+);
+
+const QuizManager = lazy(
+  () => import("../../components/quiz/QuizManager")
+);
+
+const TabLoader = () => (
+  <div className="flex items-center justify-center py-12">
+    <Spinner />
+  </div>
+);
 const DocumentDetailPage = () => {
   const { id } = useParams();
 
@@ -103,21 +124,31 @@ const DocumentDetailPage = () => {
   };
 
   const renderChat = () => {
-     return <ChatInterface />
-  };
+  return (
+    <Suspense fallback={<TabLoader />}>
+      <ChatInterface />
+    </Suspense>
+  );
+};
 
 
-  const renderAIActions = () => {
-  return <AIActions/>
+const renderAIActions = () => {
+  return (
+    <Suspense fallback={<TabLoader />}>
+      <AIActions />
+    </Suspense>
+  );
 };
 
 const renderFlashcardsTab = () => {
   if (!document?.data) return <Spinner />;
 
   return (
-    <FlashcardManager
-      documentId={document.data._id}
-    />
+    <Suspense fallback={<TabLoader />}>
+      <FlashcardManager
+        documentId={document.data._id}
+      />
+    </Suspense>
   );
 };
 
@@ -125,9 +156,11 @@ const renderQuizzesTab = () => {
   if (!document?.data) return <Spinner />;
 
   return (
-    <QuizManager
-      documentId={document.data._id}
-    />
+    <Suspense fallback={<TabLoader />}>
+      <QuizManager
+        documentId={document.data._id}
+      />
+    </Suspense>
   );
 };
 
