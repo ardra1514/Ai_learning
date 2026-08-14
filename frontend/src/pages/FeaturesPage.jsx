@@ -84,7 +84,7 @@ const FeaturesPage = () => {
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F969C] text-xl font-bold shadow-lg shadow-[#0F969C]/20">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0C7075] text-xl font-bold shadow-lg shadow-[#0F969C]/20">
                 L
               </div>
 
@@ -121,7 +121,7 @@ const FeaturesPage = () => {
 
               <Link
                 to="/register"
-                className="rounded-lg bg-[#0F969C] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#0F969C]/20 transition hover:bg-[#0C7075]"
+                className="rounded-lg bg-[#0C7075] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#0F969C]/20 transition hover:bg-[#0C7075]"
               >
                 Get Started
               </Link>
@@ -140,7 +140,7 @@ const FeaturesPage = () => {
           <div className="relative mx-auto max-w-5xl px-6 py-24 text-center md:py-32">
 
             <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-[#0F969C]/40 bg-[#072E33] px-4 py-2 text-sm text-[#6DA5C0]">
-              <span className="h-2 w-2 rounded-full bg-[#0F969C]" />
+              <span className="h-2 w-2 rounded-full bg-[#0C7075]" />
               Powerful AI Learning Tools
             </div>
 
@@ -173,7 +173,7 @@ const FeaturesPage = () => {
                   className="group rounded-2xl border border-[#294D61] bg-[#05161A] p-8 transition duration-300 hover:-translate-y-2 hover:border-[#0F969C] hover:shadow-xl hover:shadow-[#0F969C]/10"
                 >
 
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0C7075]/30 text-3xl transition group-hover:bg-[#0F969C]/20">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0C7075]/30 text-3xl transition group-hover:bg-[#0C7075]/20">
                     {feature.icon}
                   </div>
 
@@ -267,7 +267,7 @@ const FeaturesPage = () => {
 
           <div className="mx-auto max-w-5xl rounded-3xl border border-[#0C7075] bg-[#072E33] px-6 py-16 text-center shadow-2xl shadow-[#0F969C]/10 md:px-12">
 
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0F969C] text-3xl">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0C7075] text-3xl">
               🚀
             </div>
 
@@ -284,7 +284,7 @@ const FeaturesPage = () => {
 
               <Link
                 to="/register"
-                className="rounded-xl bg-[#0F969C] px-7 py-3.5 font-semibold transition hover:bg-[#0C7075]"
+                className="rounded-xl bg-[#0C7075] px-7 py-3.5 font-semibold transition hover:bg-[#0C7075]"
               >
                 Get Started →
               </Link>
