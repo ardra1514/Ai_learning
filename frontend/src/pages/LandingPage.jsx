@@ -7,13 +7,13 @@ const LandingPage = () => {
     <>
       <Helmet>
         <title>
-          Learnly AI | Turn PDFs into Notes, Quizzes & Flashcards
+         Learnly AI | AI PDF Study Tool for Notes, Quizzes & Flashcards
         </title>
 
-        <meta
-          name="description"
-          content="Learnly AI helps students turn study PDFs into short notes, quizzes, and flashcards using AI. Upload your study material and study smarter."
-        />
+       <meta
+  name="description"
+  content="Learnly AI is an AI PDF study tool that turns study PDFs into notes, quizzes, and flashcards. Upload your PDF and study smarter with AI."
+/>
 
         <link
           rel="canonical"
@@ -37,16 +37,37 @@ const LandingPage = () => {
           content="https://learnly-ai-six.vercel.app/"
         />
 
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Learnly AI",
-            description:
-              "AI-powered study platform that turns study PDFs into short notes, quizzes, and flashcards.",
-            url: "https://learnly-ai-six.vercel.app/",
-          })}
-        </script>
+       <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://learnly-ai-six.vercel.app/#website",
+        name: "Learnly AI",
+        url: "https://learnly-ai-six.vercel.app/",
+        description:
+          "Learnly AI is an AI-powered study platform that turns study PDFs into notes, quizzes, and flashcards."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://learnly-ai-six.vercel.app/#organization",
+        name: "Learnly AI",
+        url: "https://learnly-ai-six.vercel.app/"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://learnly-ai-six.vercel.app/#application",
+        name: "Learnly AI",
+        url: "https://learnly-ai-six.vercel.app/",
+        applicationCategory: "EducationalApplication",
+        operatingSystem: "Web",
+        description:
+          "AI-powered study platform that analyzes study PDFs and generates short notes, quizzes, and flashcards."
+      }
+    ]
+  })}
+</script>
       </Helmet>
 
       <main className="min-h-screen bg-[#05161A] text-white">
@@ -127,9 +148,10 @@ const LandingPage = () => {
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-8 text-[#B8D0D4]">
-                Upload your study PDFs and let AI create short notes,
-                quizzes, and flashcards to help you understand your
-                study material and prepare faster.
+                Learnly AI is an AI-powered PDF study tool that turns your
+  study materials into short notes, quizzes, and flashcards.
+  Upload your PDF, understand difficult topics, and prepare
+  faster..
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -253,36 +275,36 @@ const LandingPage = () => {
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
               {[
-                {
-                  icon: "📄",
-                  title: "PDF Analysis",
-                  text: "Upload your study PDFs and let AI understand your learning material.",
-                },
-                {
-                  icon: "📝",
-                  title: "AI Short Notes",
-                  text: "Convert lengthy documents into concise notes for faster revision.",
-                },
-                {
-                  icon: "❓",
-                  title: "AI Quizzes",
-                  text: "Generate questions from your study material and test your knowledge.",
-                },
-                {
-                  icon: "🧠",
-                  title: "Smart Flashcards",
-                  text: "Create flashcards automatically for quick and effective revision.",
-                },
-                {
-                  icon: "🤖",
-                  title: "AI Study Assistant",
-                  text: "Get AI-powered help when you need to understand difficult concepts.",
-                },
-                {
-                  icon: "📊",
-                  title: "Learning Dashboard",
-                  text: "Manage your documents, quizzes, flashcards and learning progress.",
-                },
+               {
+  icon: "📄",
+  title: "AI PDF Analysis",
+  text: "Upload your study PDFs and let AI analyze the content to help you understand your learning material.",
+},
+{
+  icon: "📝",
+  title: "AI PDF to Notes",
+  text: "Turn lengthy study PDFs into concise notes for faster revision and easier understanding.",
+},
+{
+  icon: "❓",
+  title: "AI Quiz Generator",
+  text: "Generate quizzes from your study PDFs and test your understanding of important concepts.",
+},
+{
+  icon: "🧠",
+  title: "AI Flashcard Generator",
+  text: "Create flashcards from your study materials for quick and effective revision.",
+},
+{
+  icon: "🤖",
+  title: "AI Study Assistant",
+  text: "Get AI-powered assistance to understand difficult concepts while studying your documents.",
+},
+{
+  icon: "📊",
+  title: "Learning Dashboard",
+  text: "Manage your study documents, quizzes, flashcards, and learning activities in one place.",
+},
               ].map((feature) => (
                 <div
                   key={feature.title}
